@@ -5,7 +5,7 @@ branches:
     - gh-pages
     - docs
 
-image: macos
+image: macos-monterey
 
 clone_depth: 3
 
@@ -13,14 +13,13 @@ environment:
   GITHUB_NAME: mandeuk26
   
 install:
-  - brew install tree
+  - xcodebuild -version
   
-configuration: 
-  - Release
+configuration:
   - Debug
 
 before_build:
-  - echo "before build"
+  - env
   
 build_script:
-  - tree -L 3 $(pwd)
+  - echo "hello"
